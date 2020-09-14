@@ -22,12 +22,22 @@ Spark Streaming UI:
 
 ![ image Spark UI](images/SparkUI.JPG)
 
+Results:
+
+![results](images/crime_Count.JPG)
+
 
 ## Step 3
 
 Write the answers to these questions in the README.md doc of your GitHub repo:
 
 * How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
+
+There are two important parameters that we can modify to affect the behavior:
+* maxOffsetsPerTrigger: Rate limit on maximum number of offsets processed per trigger interval. The specified total number of offsets will be proportionally split across topicPartitions of different volume.
+
+ * maxRatePerPartition: is the maximum rate (in messages per second) at which each Kafka partition will be read by this direct API
+ 
 
 * What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on va lues, how can you tell these were the most optimal?
 
