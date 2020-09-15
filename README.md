@@ -32,12 +32,12 @@ Results:
 * How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
 
     There are a couple of important parameters that we can modify to affect the behavior:
-    * maxOffsetsPerTrigger: Rate limit on maximum number of offsets processed per trigger interval. The specified total number of offsets will be proportionally split across topicPartitions of different volume.
+    * maxOffsetsPerTrigger: Rate limit on maximum number of offsets processed per trigger interval. The specified total number of offsets will be proportionally split across topicPartitions of different volume. [Apache spark docs](https://spark.apache.org/docs/2.1.0/structured-streaming-kafka-integration.html)
 
 
-     * maxRatePerPartition: is the maximum rate (in messages per second) at which each Kafka partition will be read by this direct API
+     * maxRatePerPartition: is the maximum rate (in messages per second) at which each Kafka partition will be read by this direct API. [Apache spark docs](https://spark.apache.org/docs/2.1.0/structured-streaming-kafka-integration.html)
  
-     * Local[K]: Run Spark locally with K worker threads (ideally, set this to the number of cores on your machine).
+     * Local[K]: Run Spark locally with K worker threads (ideally, set this to the number of cores on your machine). [Apache spark docs](https://spark.apache.org/docs/2.1.0/structured-streaming-kafka-integration.html)
      
     if I change these parameters and increse their values I can see an increment on the processedRowsPerSec(with local[*] to use all threads): 
     
