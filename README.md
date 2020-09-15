@@ -39,9 +39,15 @@ Write the answers to these questions in the README.md doc of your GitHub repo:
 
      * maxRatePerPartition: is the maximum rate (in messages per second) at which each Kafka partition will be read by this direct API
  
-    if I change these parameters and increse their values I can see an increment on the processedRowsPerSec. However, as far I understood If I only increase one parameter the throughput is not improved in the same way as when I change both. 
+    if I change these parameters and increse their values I can see an increment on the processedRowsPerSec: 
+    
+    ![max10](images/MaxRate_10.jpg)
+    
+    
+    
+    ![max100](images/maxRate_100_MaxOffsets_500.JPG)
+    
 
 
-
-* What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on va lues, how can you tell these were the most optimal?
+* What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
 
