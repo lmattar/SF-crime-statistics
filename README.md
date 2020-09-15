@@ -50,9 +50,9 @@ Results:
 
 * What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
 
-I  achieved the best performance with the following configuration: 
-   * maxRatePerPartition: 5000
-   * Local[*] 
-   * maxOffsetsPerTrigger:20000
+    I achieved the best performance with the following configuration: 
+       * maxRatePerPartition: 5000
+       * Local[*] 
+       * maxOffsetsPerTrigger:20000
 
- ![final](images/Max_Rate_50000.JPG)
+     ![final](images/Max_Rate_50000.JPG)
