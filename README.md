@@ -29,17 +29,17 @@ Results:
 
 ## Step 3
 
-Write the answers to these questions in the README.md doc of your GitHub repo:
-
 * How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
 
-    There are two important parameters that we can modify to affect the behavior:
+    There are a couple of important parameters that we can modify to affect the behavior:
     * maxOffsetsPerTrigger: Rate limit on maximum number of offsets processed per trigger interval. The specified total number of offsets will be proportionally split across topicPartitions of different volume.
 
 
      * maxRatePerPartition: is the maximum rate (in messages per second) at which each Kafka partition will be read by this direct API
  
-    if I change these parameters and increse their values I can see an increment on the processedRowsPerSec: 
+     * Local[K]: Run Spark locally with K worker threads (ideally, set this to the number of cores on your machine).
+     
+    if I change these parameters and increse their values I can see an increment on the processedRowsPerSec(with local[*] to use all threads): 
     
     ![max10](images/MaxRate_10.jpg)
     
@@ -48,6 +48,11 @@ Write the answers to these questions in the README.md doc of your GitHub repo:
     ![max100](images/maxRate_100_MaxOffsets_500.JPG)
     
 
-
 * What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
 
+I  achieved the best performance with the following configuration: 
+   * maxRatePerPartition: 5000
+   * Local[*] 
+   * maxOffsetsPerTrigger:20000
+
+ ![final](images/Max_Rate_50000.JPG)
